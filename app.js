@@ -4,9 +4,9 @@ const mysql = require("mysql");
 const app = express();
 var db = mysql.createConnection({
   host: "77.72.0.150",
-  user: "tanielogo_sqll",
-  password: "!Loleq123",
-  database: "tanielogo_sqll",
+  user: "backend_app",
+  password: "!LoLeQ3@1",
+  database: "backend_app",
 });
 app.get("/createtable", (req, res) => {
   let sql = `INSERT INTO users VALUES (DEFAULT, 'lol',  'ttt')`;
@@ -16,6 +16,10 @@ app.get("/createtable", (req, res) => {
     console.log(result);
     res.send("Created");
   });
+});
+
+app.get("/", (req, res) => {
+  res.send("Homepage");
 });
 db.connect((err) => {
   if (err) throw err;
