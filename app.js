@@ -8,7 +8,7 @@ var db = mysql.createConnection({
   password: "!LoLeQ3@1",
   database: "backend_app",
 });
-app.get("/createtable", (req, res) => {
+app.get("/api/createtable", (req, res) => {
   let sql = `INSERT INTO users VALUES (DEFAULT, 'lol',  'ttt')`;
 
   db.query(sql, (err, result) => {
@@ -18,7 +18,7 @@ app.get("/createtable", (req, res) => {
   });
 });
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send("111 Homepageeee !!!");
 });
 db.connect((err) => {
